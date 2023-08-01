@@ -1,0 +1,8 @@
+# Node.js modules
+node_modules/
+
+# Compiled website
+dist/
+
+# You may want to uncomment this
+package-lock.json
