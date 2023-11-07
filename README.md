@@ -15,6 +15,9 @@ You can compile production and development builds with `npm run build:prod` and
 `npm run build:dev` respectively. The compiled website will be located in the
 `dist/` directory.
 
+This template includes some preset Visual Studio Code tasks which you can use
+instead of manually running npm scripts.
+
 ## How does it work?
 
 ### Pages
