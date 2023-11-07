@@ -56,8 +56,11 @@ class Page {
   /**
    * Absolute path to the page's HTML template.
    */
-  get html() {
-    return path.join(this.path, "template.html");
+  get template() {
+    const handlebarsPath = path.join(this.path, "template.hbs");
+
+    if (fs.existsSync(handlebarsPath)) return handlebarsPath;
+    else return path.join(this.path, "template.html");
   }
 
   /**
@@ -72,7 +75,7 @@ class Page {
 
   asHtmlPlugin() {
     return new HtmlWebpackPlugin({
-      template: this.html,
+      template: this.template,
       filename: `${this.name}.html`,
       chunks: this.chunks,
       chunksSortMode: "manual",
@@ -116,6 +119,10 @@ module.exports = {
   plugins: plugins,
   module: {
     rules: [
+      {
+        test: /\.hbs$/,
+        use: "handlebars-loader",
+      },
       {
         test: /\.ts$/,
         use: "ts-loader",

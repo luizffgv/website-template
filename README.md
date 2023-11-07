@@ -19,7 +19,9 @@ You can compile production and development builds with `npm run build:prod` and
 
 ### Pages
 
-Each page has a separate directory in `src/pages/`.
+Each page has a separate directory in `src/pages/`, and the directory must
+include an HTML template named `template.html` or a Handlebars template named
+`template.hbs`.
 
 You can access a page by its name with an `.html` extension.  
 As an example, a page in `src/pages/wow/` will produce the file `wow.html` in
