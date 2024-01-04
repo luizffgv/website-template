@@ -129,7 +129,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         oneOf: [
           {
             // Imports the CSS as a string
